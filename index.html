@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LOCALS — Live like a local.</title>
+  <meta name="description" content="Scopri una destinazione attraverso le persone del posto. Esperienze, attività e luoghi scelti da chi ci vive davvero.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #123f36;
+      --green-light: #e9f0eb;
+      --cream: #f8f6f0;
+      --yellow: #f4bd32;
+      --yellow-hover: #e9ad18;
+      --text: #173d35;
+      --muted: #6d746f;
+      --white: #ffffff;
+      --line: #e8e8e3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      height: 82px;
+      background: rgba(255,255,255,.97);
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+
+    .navbar {
+      width: min(1280px, 92%);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pin {
+      width: 26px;
+      height: 26px;
+      border-radius: 50% 50% 50% 0;
+      background: var(--yellow);
+      transform: rotate(-45deg);
+      position: relative;
+    }
+
+    .pin::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--white);
+      border-radius: 50%;
+      position: absolute;
+      left: 9px;
+      top: 9px;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 24px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .brand-text small {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a {
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: #b77d00;
+    }
+
+    .new {
+      font-size: 9px;
+      padding: 3px 6px;
+      background: var(--yellow);
+      border-radius: 20px;
+      margin-left: 3px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .language {
+      border: 0;
+      background: transparent;
+      color: var(--green);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 690px;
+      background:
+        linear-gradient(90deg, rgba(8,37,31,.62), rgba(8,37,31,.18)),
+        url("https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=2000&q=88")
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-inner {
+      width: min(1180px, 90%);
+      margin: auto;
+      padding: 80px 0 40px;
+    }
+
+    .hero-copy {
+      max-width: 790px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #f8d87d;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero-copy > p {
+      font-size: 20px;
+      max-width: 620px;
+      line-height: 1.6;
+      margin-bottom: 42px;
+      color: rgba(255,255,255,.93);
+    }
+
+    /* SEARCH */
+
+    .search {
+      max-width: 1130px;
+      background: white;
+      border-radius: 16px;
+      padding: 9px;
+      display: grid;
+      grid-template-columns: 1.25fr 1.25fr 1fr .8fr auto;
+      box-shadow: 0 18px 55px rgba(0,0,0,.2);
+      color: var(--green);
+    }
+
+    .search-field {
+      padding: 12px 18px;
+      border-right: 1px solid var(--line);
+    }
+
+    .search-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .search-field select,
+    .search-field input {
+      border: 0;
+      outline: 0;
+      width: 100%;
+      background: transparent;
+      color: #727772;
+      font-size: 13px;
+    }
+
+    .search-btn {
+      border: 0;
+      background: var(--yellow);
+      color: var(--green);
+      border-radius: 11px;
+      padding: 0 25px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .search-btn:hover {
+      background: var(--yellow-hover);
+    }
+
+    /* TRUST */
+
+    .trust {
+      border-bottom: 1px solid var(--line);
+      background: white;
+    }
+
+    .trust-grid {
+      min-height: 105px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      align-items: center;
+    }
+
+    .trust-item {
+      padding: 12px 25px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .trust-item span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .trust-icon {
+      font-size: 21px;
+      margin-bottom: 7px;
+    }
+
+    /* GENERIC */
+
+    section.content {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 35px;
+      gap: 20px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(34px,4vw,48px);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .view-all {
+      font-weight: 700;
+      font-size: 14px;
+      border-bottom: 1px solid var(--green);
+      padding-bottom: 3px;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 17px;
+    }
+
+    .category {
+      height: 235px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .category img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .category:hover img {
+      transform: scale(1.05);
+    }
+
+    .category::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 35%,rgba(5,28,24,.78));
+    }
+
+    .category span {
+      position: absolute;
+      z-index: 2;
+      left: 18px;
+      bottom: 17px;
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+    }
+
+    /* EXPERIENCES */
+
+    .experiences-bg {
+      background: var(--cream);
+    }
+
+    .experiences {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 17px;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0,0,0,.08);
+    }
+
+    .card-image {
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .heart {
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(255,255,255,.93);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .card-body {
+      padding: 19px;
+    }
+
+    .location {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+
+    .card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .price {
+      font-size: 13px;
+    }
+
+    .price strong {
+      font-size: 17px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 6px 9px;
+      border-radius: 20px;
+      background: var(--green-light);
+    }
+
+    /* WHY LOCALS */
+
+    .why {
+      background: var(--green);
+      color: white;
+    }
+
+    .why-inner {
+      padding: 90px 0;
+    }
+
+    .why-head {
+      max-width: 680px;
+      margin-bottom: 50px;
+    }
+
+    .why-head p {
+      color: rgba(255,255,255,.7);
+      margin-top: 14px;
+      line-height: 1.7;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 35px;
+    }
+
+    .why-item .number {
+      color: var(--yellow);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .why-item h3 {
+      font-family: "Playfair Display",serif;
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    .why-item p {
+      color: rgba(255,255,255,.68);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* STORY */
+
+    .story {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .story-copy p {
+      color: var(--muted);
+      margin: 22px 0 30px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .story-link {
+      display: inline-block;
+      background: var(--yellow);
+      padding: 14px 22px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .story-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .story-images img {
+      height: 390px;
+      object-fit: cover;
+      border-radius: 17px;
+    }
+
+    .story-images img:nth-child(2) {
+      margin-top: 45px;
+    }
+
+    /* LOCAL CTA */
+
+    .local-cta {
+      background: var(--cream);
+      padding: 75px 0;
+    }
+
+    .local-box {
+      background: var(--yellow);
+      border-radius: 22px;
+      padding: 55px 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .local-box h2 {
+      max-width: 600px;
+    }
+
+    .local-box p {
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    .dark-btn {
+      background: var(--green);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 9px;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #092e28;
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 45px;
+      margin-bottom: 55px;
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    footer h4 {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 25px;
+      color: rgba(255,255,255,.45);
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding: 85px 0;
+      }
+
+      h1 {
+        font-size: 49px;
+      }
+
+      .search {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .search-field {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .search-btn {
+        min-height: 55px;
+      }
+
+      .trust-grid,
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .categories {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .experiences {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+
+      header {
+        height: 70px;
+      }
+
+      .nav-right span {
+        display: none;
+      }
+
+      .hero-inner {
+        padding: 65px 0;
+      }
+
+      h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+      }
+
+      .hero-copy > p {
+        font-size: 17px;
+      }
+
+      .search {
+        display: block;
+      }
+
+      .search-field {
+        border-right: 0;
+        padding: 14px 12px;
+      }
+
+      .search-btn {
+        width: 100%;
+        margin-top: 6px;
+        padding: 16px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust-item {
+        border-bottom: 1px solid var(--line);
+        padding: 20px 10px;
+      }
+
+      section.content {
+        padding: 65px 0;
+      }
+
+      .categories,
+      .experiences {
+        grid-template-columns: 1fr;
+      }
+
+      .category {
+        height: 210px;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-images img {
+        height: 260px;
+      }
+
+      .local-box {
+        padding: 35px 25px;
+        display: block;
+      }
+
+      .dark-btn {
+        display: inline-block;
+        margin-top: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="navbar">
+
+    <a class="brand" href="#">
+      <div class="pin"></div>
+      <div class="brand-text">
+        <strong>LOCALS</strong>
+        <small>Live like a local.</small>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#esperienze">Esperienze</a>
+      <a href="#categorie">Categorie</a>
+      <a href="#">Destinazioni</a>
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#local">Per i Local <span class="new">NEW</span></a>
+    </nav>
+
+    <div class="nav-right">
+      <span>♡</span>
+      <span>◯</span>
+
+      <select class="language">
+        <option>IT 🇮🇹</option>
+        <option>EN 🇬🇧</option>
+        <option>DE 🇩🇪</option>
+        <option>FR 🇫🇷</option>
+      </select>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+
+      <span class="eyebrow">Live like a local.</span>
+
+      <h1>Scopri i luoghi attraverso le persone del posto.</h1>
+
+      <p>
+        Esperienze autentiche, persone vere, ricordi che restano.
+      </p>
+
+    </div>
+
+    <div class="search">
+
+      <div class="search-field">
+        <label>Dove vuoi andare?</label>
+        <select>
+          <option>Scegli una destinazione</option>
+          <option>Gallipoli</option>
+          <option>Lecce</option>
+          <option>Otranto</option>
+          <option>Santa Maria di Leuca</option>
+        </select>
+      </div>
+
+      <div class="search-field">
+        <label>Cosa vuoi fare?</label>
+        <select>
+          <option>Tutte le esperienze</option>
+          <option>Mare e barche</option>
+          <option>Food & Drink</option>
+          <option>Avventura e Sport</option>
+          <option>Benessere</option>
+          <option>Cultura</option>
+          <option>Nightlife</option>
+        </select>
+      </div>
+
+      <div class="search-field">
+        <label>Quando?</label>
+        <input type="date">
+      </div>
+
+      <div class="search-field">
+        <label>Persone</label>
+        <select>
+          <option>1 persona</option>
+          <option selected>2 persone</option>
+          <option>3 persone</option>
+          <option>4 persone</option>
+          <option>5+ persone</option>
+        </select>
+      </div>
+
+      <button class="search-btn">Cerca</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<section class="trust">
+
+  <div class="container trust-grid">
+
+    <div class="trust-item">
+      <div class="trust-icon">⌖</div>
+      <strong>Persone del posto</strong>
+      <span>Scopri il territorio attraverso chi lo vive.</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">◇</div>
+      <strong>Esperienze selezionate</strong>
+      <span>Attività e realtà locali da conoscere.</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">☀</div>
+      <strong>Tutto in un posto</strong>
+      <span>Dal mare allo sport, dal food alla nightlife.</span>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">♡</div>
+      <strong>Vivi davvero il luogo</strong>
+      <span>Vai oltre i soliti itinerari turistici.</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="content" id="categorie">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div>
+        <h2>Cosa vuoi fare?</h2>
+        <p class="section-sub">
+          Trova il tuo modo di vivere la destinazione.
+        </p>
+      </div>
+
+      <a class="view-all" href="#">Tutte le categorie →</a>
+
+    </div>
+
+    <div class="categories">
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=800&q=80" alt="Mare e barche">
+        <span>Mare & Barche</span>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Food and drink">
+        <span>Food & Drink</span>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80" alt="Avventura">
+        <span>Avventura & Sport</span>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Benessere">
+        <span>Benessere</span>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=800&q=80" alt="Cultura">
+        <span>Cultura & Tradizioni</span>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Nightlife">
+        <span>Nightlife</span>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Transfer">
+        <span>Transfer & Servizi</span>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80" alt="Esperienze">
+        <span>Scopri tutto</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EXPERIENCES -->
+
+<section class="content experiences-bg" id="esperienze">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div>
+        <h2>Esperienze in evidenza</h2>
+        <p class="section-sub">
+          Un primo assaggio di quello che puoi vivere.
+        </p>
+      </div>
+
+      <a class="view-all" href="#">Scopri tutte →</a>
+
+    </div>
+
+    <div class="experiences">
+
+      <article class="card">
+
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=80" alt="Boat tour">
+          <button class="heart">♡</button>
+        </div>
+
+        <div class="card-body">
+          <div class="location">GALLIPOLI · MARE</div>
+          <h3>Sunset Boat Experience</h3>
+
+          <div class="card-bottom">
+            <span class="tag">Mare & Barche</span>
+            <span class="price">da <strong>€45</strong></span>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80" alt="Cooking experience">
+          <button class="heart">♡</button>
+        </div>
+
+        <div class="card-body">
+          <div class="location">SALENTO · FOOD</div>
+          <h3>Cooking Experience in Masseria</h3>
+
+          <div class="card-bottom">
+            <span class="tag">Food & Drink</span>
+            <span class="price">da <strong>€65</strong></span>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1544550285-f813152fb2fd?auto=format&fit=crop&w=900&q=80" alt="Kayak">
+          <button class="heart">♡</button>
+        </div>
+
+        <div class="card-body">
+          <div class="location">SANTA MARIA DI LEUCA · ADVENTURE</div>
+          <h3>Kayak tra grotte e calette</h3>
+
+          <div class="card-bottom">
+            <span class="tag">Avventura</span>
+            <span class="price">da <strong>€35</strong></span>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHY LOCALS -->
+
+<section class="why" id="come-funziona">
+
+  <div class="container why-inner">
+
+    <div class="why-head">
+
+      <span class="eyebrow">Perché LOCALS</span>
+
+      <h2>Una destinazione non si visita soltanto. Si vive.</h2>
+
+      <p>
+        LOCALS nasce per rendere più semplice scoprire ciò che un territorio
+        ha davvero da offrire: esperienze, attività e realtà locali riunite
+        in un unico posto.
+      </p>
+
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-item">
+        <div class="number">01</div>
+        <h3>Scopri</h3>
+        <p>
+          Trova attività e luoghi che spesso non incontreresti nei classici
+          itinerari turistici.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <div class="number">02</div>
+        <h3>Scegli</h3>
+        <p>
+          Dal mare alla cucina, dallo sport alla nightlife: scegli quello
+          che vuoi fare davvero.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <div class="number">03</div>
+        <h3>Conosci</h3>
+        <p>
+          Entra in contatto con attività, professionisti e persone che
+          conoscono il territorio.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <div class="number">04</div>
+        <h3>Vivi</h3>
+        <p>
+          Trasforma una semplice vacanza in qualcosa che appartiene davvero
+          al luogo in cui sei.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section class="content">
+
+  <div class="container story">
+
+    <div class="story-copy">
+
+      <span class="eyebrow" style="color:#b77d00;">Live like a local.</span>
+
+      <h2>Come chiedere consiglio a qualcuno del posto.</h2>
+
+      <p>
+        Dove andare al mare. Dove mangiare. Cosa fare stasera. Dove
+        allenarti. Quale esperienza vale davvero la pena vivere.
+        <br><br>
+        LOCALS vuole raccogliere in un unico luogo digitale ciò che oggi
+        scopri soprattutto parlando con chi quel territorio lo conosce
+        davvero.
+      </p>
+
+      <a href="#esperienze" class="story-link">Inizia a scoprire →</a>
+
+    </div>
+
+    <div class="story-images">
+
+      <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=800&q=80" alt="Italia">
+
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" alt="Esperienze locali">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROVIDERS -->
+
+<section class="local-cta" id="local">
+
+  <div class="container">
+
+    <div class="local-box">
+
+      <div>
+        <h2>Sei un Local? Porta la tua esperienza su LOCALS.</h2>
+
+        <p>
+          Fai conoscere la tua attività a persone che stanno cercando
+          qualcosa da vivere proprio nella tua destinazione.
+        </p>
+      </div>
+
+      <a href="#" class="dark-btn">Diventa un Local →</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">LOCALS</div>
+        <p>Live like a local.</p>
+        <p style="margin-top:12px;max-width:290px;">
+          Scopri i luoghi attraverso le persone che li vivono.
+        </p>
+      </div>
+
+      <div>
+        <h4>Esplora</h4>
+        <p><a href="#">Esperienze</a></p>
+        <p><a href="#">Categorie</a></p>
+        <p><a href="#">Destinazioni</a></p>
+      </div>
+
+      <div>
+        <h4>LOCALS</h4>
+        <p><a href="#">Come funziona</a></p>
+        <p><a href="#">Chi siamo</a></p>
+        <p><a href="#">Per i Local</a></p>
+      </div>
+
+      <div>
+        <h4>Supporto</h4>
+        <p><a href="#">Contatti</a></p>
+        <p><a href="#">Privacy</a></p>
+        <p><a href="#">Termini</a></p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 LOCALS. Live like a local.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
