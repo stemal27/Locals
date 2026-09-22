@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LOCALS — Live like a local.</title>
-  <meta name="description" content="Scopri una destinazione attraverso le persone del posto. Esperienze, attività e luoghi scelti da chi ci vive davvero.">
+  <title>LOCALS — Live like a local</title>
+  <meta name="description" content="Vivi come gli abitanti del posto, ovunque tu sia. Scopri attività, luoghi ed esperienze attraverso chi vive davvero il territorio.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
 
   <style>
     :root {
+      --navy: #0f172a;
       --green: #123f36;
       --green-light: #e9f0eb;
       --cream: #f8f6f0;
@@ -66,7 +67,7 @@
 
     header {
       height: 82px;
-      background: rgba(255,255,255,.97);
+      background: rgba(255,255,255,.98);
       display: flex;
       align-items: center;
       position: sticky;
@@ -86,44 +87,12 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-    }
-.brand-logo {
-  width: 210px;
-  height: auto;
-  display: block;
-}
-    .pin {
-      width: 26px;
-      height: 26px;
-      border-radius: 50% 50% 50% 0;
-      background: var(--yellow);
-      transform: rotate(-45deg);
-      position: relative;
     }
 
-    .pin::after {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--white);
-      border-radius: 50%;
-      position: absolute;
-      left: 9px;
-      top: 9px;
-    }
-
-    .brand-text strong {
+    .brand-logo {
+      width: 210px;
+      height: auto;
       display: block;
-      font-size: 24px;
-      letter-spacing: 2px;
-      line-height: 1;
-    }
-
-    .brand-text small {
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: .5px;
     }
 
     nav {
@@ -132,6 +101,7 @@
       gap: 29px;
       font-size: 14px;
       font-weight: 600;
+      color: var(--navy);
     }
 
     nav a {
@@ -155,12 +125,13 @@
       align-items: center;
       gap: 18px;
       font-size: 14px;
+      color: var(--navy);
     }
 
     .language {
       border: 0;
       background: transparent;
-      color: var(--green);
+      color: var(--navy);
       font-weight: 600;
       cursor: pointer;
     }
@@ -169,100 +140,166 @@
 
     .hero {
       min-height: 690px;
-      background:
-        linear-gradient(90deg, rgba(8,37,31,.62), rgba(8,37,31,.18)),
-        url("https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=2000&q=88")
-        center/cover no-repeat;
+      position: relative;
       display: flex;
       align-items: center;
       color: white;
+      background-image: url("hero.png");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(10, 22, 29, .60) 0%,
+          rgba(10, 22, 29, .42) 30%,
+          rgba(10, 22, 29, .14) 58%,
+          rgba(10, 22, 29, 0) 78%
+        );
     }
 
     .hero-inner {
-      width: min(1180px, 90%);
+      width: min(1280px, 88%);
       margin: auto;
-      padding: 80px 0 40px;
+      padding: 80px 0 70px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-copy {
-      max-width: 790px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-      margin-bottom: 18px;
-      color: #f8d87d;
+      max-width: 760px;
     }
 
     h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(48px, 6vw, 78px);
-      line-height: 1.04;
-      font-weight: 500;
-      letter-spacing: -2px;
-      margin-bottom: 24px;
-    }
-
-    .hero-copy > p {
-      font-size: 20px;
-      max-width: 620px;
-      line-height: 1.6;
-      margin-bottom: 42px;
-      color: rgba(255,255,255,.93);
-    }
-
-    /* SEARCH */
-
-    .search {
-      max-width: 1130px;
-      background: white;
-      border-radius: 16px;
-      padding: 9px;
-      display: grid;
-      grid-template-columns: 1.25fr 1.25fr 1fr .8fr auto;
-      box-shadow: 0 18px 55px rgba(0,0,0,.2);
-      color: var(--green);
-    }
-
-    .search-field {
-      padding: 12px 18px;
-      border-right: 1px solid var(--line);
-    }
-
-    .search-field label {
-      display: block;
-      font-size: 12px;
+      font-family: "DM Sans", sans-serif;
+      font-size: clamp(48px, 5.4vw, 76px);
+      line-height: 1.06;
       font-weight: 700;
-      margin-bottom: 5px;
+      letter-spacing: -3px;
+      max-width: 760px;
+      margin-bottom: 34px;
+      text-shadow: 0 2px 18px rgba(0,0,0,.12);
     }
 
-    .search-field select,
-    .search-field input {
+    .ask-label {
+      display: block;
+      color: var(--yellow);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    /* ASK LOCALS SEARCH */
+
+    .locals-search {
+      width: min(760px, 100%);
+      height: 78px;
+      background: white;
+      border-radius: 40px;
+      display: grid;
+      grid-template-columns: 245px 1fr 72px;
+      align-items: center;
+      color: var(--navy);
+      box-shadow: 0 16px 45px rgba(0,0,0,.20);
+      padding: 7px 8px 7px 0;
+    }
+
+    .destination-wrap {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px 0 28px;
+      border-right: 1px solid #dedede;
+      position: relative;
+    }
+
+    .destination-icon {
+      font-size: 22px;
+      margin-right: 11px;
+      line-height: 1;
+    }
+
+    .destination-select {
+      width: 100%;
       border: 0;
       outline: 0;
-      width: 100%;
       background: transparent;
-      color: #727772;
-      font-size: 13px;
+      color: var(--navy);
+      font-weight: 600;
+      cursor: pointer;
+      appearance: auto;
     }
 
-    .search-btn {
+    .question-wrap {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      padding: 0 20px;
+    }
+
+    .search-icon {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--navy);
+      border-radius: 50%;
+      margin-right: 16px;
+      flex: 0 0 auto;
+      position: relative;
+    }
+
+    .search-icon::after {
+      content: "";
+      width: 8px;
+      height: 2px;
+      background: var(--navy);
+      position: absolute;
+      right: -6px;
+      bottom: -3px;
+      transform: rotate(45deg);
+      border-radius: 2px;
+    }
+
+    .locals-question {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .locals-question::placeholder {
+      color: #7b7e84;
+      opacity: 1;
+      transition: opacity .2s;
+    }
+
+    .arrow-btn {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
       border: 0;
       background: var(--yellow);
-      color: var(--green);
-      border-radius: 11px;
-      padding: 0 25px;
-      font-weight: 700;
+      color: var(--navy);
+      font-size: 29px;
+      line-height: 1;
       cursor: pointer;
-      transition: .2s;
+      transition: transform .2s, background .2s;
     }
 
-    .search-btn:hover {
+    .arrow-btn:hover {
       background: var(--yellow-hover);
+      transform: scale(1.04);
     }
 
     /* TRUST */
@@ -382,96 +419,6 @@
       font-size: 21px;
     }
 
-    /* EXPERIENCES */
-
-    .experiences-bg {
-      background: var(--cream);
-    }
-
-    .experiences {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 24px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 17px;
-      overflow: hidden;
-      transition: transform .25s, box-shadow .25s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 35px rgba(0,0,0,.08);
-    }
-
-    .card-image {
-      height: 240px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .heart {
-      position: absolute;
-      right: 14px;
-      top: 14px;
-      width: 37px;
-      height: 37px;
-      border-radius: 50%;
-      border: 0;
-      background: rgba(255,255,255,.93);
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    .card-body {
-      padding: 19px;
-    }
-
-    .location {
-      color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 7px;
-    }
-
-    .card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .card-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-    }
-
-    .price {
-      font-size: 13px;
-    }
-
-    .price strong {
-      font-size: 17px;
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 6px 9px;
-      border-radius: 20px;
-      background: var(--green-light);
-    }
-
     /* WHY LOCALS */
 
     .why {
@@ -486,6 +433,16 @@
     .why-head {
       max-width: 680px;
       margin-bottom: 50px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #f8d87d;
     }
 
     .why-head p {
@@ -636,36 +593,29 @@
       font-size: 12px;
     }
 
-    /* MOBILE */
+    /* TABLET */
 
     @media(max-width: 900px) {
-
       nav {
         display: none;
       }
 
       .hero {
-        min-height: auto;
+        min-height: 650px;
+        background-position: 58% center;
       }
 
       .hero-inner {
-        padding: 85px 0;
+        padding: 70px 0;
       }
 
       h1 {
-        font-size: 49px;
+        font-size: 54px;
+        max-width: 650px;
       }
 
-      .search {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .search-field {
-        border-bottom: 1px solid var(--line);
-      }
-
-      .search-btn {
-        min-height: 55px;
+      .locals-search {
+        grid-template-columns: 210px 1fr 66px;
       }
 
       .trust-grid,
@@ -674,10 +624,6 @@
       }
 
       .categories {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .experiences {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -690,42 +636,83 @@
       }
     }
 
-    @media(max-width: 600px) {
+    /* MOBILE */
 
+    @media(max-width: 600px) {
       header {
         height: 70px;
+      }
+
+      .brand-logo {
+        width: 165px;
       }
 
       .nav-right span {
         display: none;
       }
 
+      .hero {
+        min-height: 650px;
+        align-items: flex-end;
+        background-position: 66% center;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(
+            0deg,
+            rgba(8,22,27,.72) 0%,
+            rgba(8,22,27,.48) 48%,
+            rgba(8,22,27,.08) 100%
+          );
+      }
+
       .hero-inner {
-        padding: 65px 0;
+        width: 90%;
+        padding: 55px 0 45px;
       }
 
       h1 {
-        font-size: 42px;
-        letter-spacing: -1px;
+        font-size: 43px;
+        line-height: 1.05;
+        letter-spacing: -2px;
+        margin-bottom: 28px;
       }
 
-      .hero-copy > p {
-        font-size: 17px;
+      .ask-label {
+        font-size: 13px;
+        margin-bottom: 11px;
       }
 
-      .search {
-        display: block;
+      .locals-search {
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 58px;
+        border-radius: 22px;
+        padding: 8px;
       }
 
-      .search-field {
+      .destination-wrap {
+        grid-column: 1 / 3;
         border-right: 0;
-        padding: 14px 12px;
+        border-bottom: 1px solid #e5e5e5;
+        height: 52px;
+        padding: 0 13px;
       }
 
-      .search-btn {
-        width: 100%;
-        margin-top: 6px;
-        padding: 16px;
+      .question-wrap {
+        height: 58px;
+        padding: 0 13px;
+      }
+
+      .locals-question {
+        font-size: 14px;
+      }
+
+      .arrow-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
       }
 
       .trust-grid {
@@ -741,8 +728,7 @@
         padding: 65px 0;
       }
 
-      .categories,
-      .experiences {
+      .categories {
         grid-template-columns: 1fr;
       }
 
@@ -788,11 +774,11 @@
   <div class="navbar">
 
     <a class="brand" href="#">
- <img src="logo-locals1.png" alt="LOCALS - Live like a local" class="brand-logo">
-</a>
+      <img src="logo-locals1.png" alt="LOCALS - Live like a local" class="brand-logo">
+    </a>
 
     <nav>
-      <a href="#esperienze">Esperienze</a>
+      <a href="#categorie">Esperienze</a>
       <a href="#categorie">Categorie</a>
       <a href="#">Destinazioni</a>
       <a href="#come-funziona">Come funziona</a>
@@ -803,7 +789,7 @@
       <span>♡</span>
       <span>◯</span>
 
-      <select class="language">
+      <select class="language" aria-label="Lingua">
         <option>IT 🇮🇹</option>
         <option>EN 🇬🇧</option>
         <option>DE 🇩🇪</option>
@@ -822,60 +808,40 @@
   <div class="hero-inner">
 
     <div class="hero-copy">
-
-      <span class="eyebrow">Live like a local.</span>
-
-      <h1>Scopri i luoghi attraverso le persone del posto.</h1>
-
-      <p>
-        Esperienze autentiche, persone vere, ricordi che restano.
-      </p>
-
+      <h1>Vivi come gli abitanti del posto, ovunque tu sia.</h1>
     </div>
 
-    <div class="search">
+    <span class="ask-label">Chiedi ai LOCALS</span>
 
-      <div class="search-field">
-        <label>Dove vuoi andare?</label>
-        <select>
-          <option>Scegli una destinazione</option>
-          <option>Gallipoli</option>
-          <option>Lecce</option>
-          <option>Otranto</option>
-          <option>Santa Maria di Leuca</option>
+    <div class="locals-search">
+
+      <div class="destination-wrap">
+        <span class="destination-icon">⌖</span>
+
+        <select class="destination-select" aria-label="Scegli la zona">
+          <option value="" selected disabled>Dove? 📍</option>
+          <option>Gallipoli e dintorni</option>
+          <option>Lecce e dintorni</option>
+          <option>Otranto e dintorni</option>
+          <option>Leuca e dintorni</option>
+          <option>Porto Cesareo e dintorni</option>
         </select>
       </div>
 
-      <div class="search-field">
-        <label>Cosa vuoi fare?</label>
-        <select>
-          <option>Tutte le esperienze</option>
-          <option>Mare e barche</option>
-          <option>Food & Drink</option>
-          <option>Avventura e Sport</option>
-          <option>Benessere</option>
-          <option>Cultura</option>
-          <option>Nightlife</option>
-        </select>
+      <div class="question-wrap">
+        <span class="search-icon"></span>
+
+        <input
+          id="localsQuestion"
+          class="locals-question"
+          type="text"
+          placeholder="Ti vuoi allenare?"
+          autocomplete="off"
+          aria-label="Chiedi ai LOCALS cosa vuoi fare"
+        >
       </div>
 
-      <div class="search-field">
-        <label>Quando?</label>
-        <input type="date">
-      </div>
-
-      <div class="search-field">
-        <label>Persone</label>
-        <select>
-          <option>1 persona</option>
-          <option selected>2 persone</option>
-          <option>3 persone</option>
-          <option>4 persone</option>
-          <option>5+ persone</option>
-        </select>
-      </div>
-
-      <button class="search-btn">Cerca</button>
+      <button class="arrow-btn" aria-label="Cerca">→</button>
 
     </div>
 
@@ -921,7 +887,7 @@
 
 <!-- CATEGORIES -->
 
-<section class="content" id="categorie" style="padding-top: 50px;">>
+<section class="content" id="categorie" style="padding-top: 50px;">
 
   <div class="container">
 
@@ -975,6 +941,7 @@
   </div>
 
 </section>
+
 
 <!-- WHY LOCALS -->
 
@@ -1049,32 +1016,36 @@
 
     <div class="story-copy">
 
-      <span class="eyebrow" style="color:#b77d00;">Live like a local.</span>
+      <span class="eyebrow" style="color:#b77d00;">Live like a local</span>
 
-      <h2>E' come chiedere un consiglio a qualcuno del posto.</h2>
+      <h2>È come chiedere un consiglio a qualcuno del posto.</h2>
 
       <p>
-        <p>
-  Vuoi prenotare un’escursione? Un transfer per l’aeroporto?
-  Allenarti? Giocare a padel o a beach volley? Fare trekking?
-  O semplicemente andare a mangiare qualcosa?
-  <br><br>
-  LOCALS ti porta subito dentro la vita del luogo. Scopri cosa fare,
-  dove andare e vivi la destinazione come chi la conosce davvero.
-  <br><br>
-  <strong>Live like a local.</strong>
-</p>
+        Vuoi prenotare un’escursione? Un transfer per l’aeroporto?
+        Allenarti? Giocare a padel o a beach volley? Fare trekking?
+        O semplicemente andare a mangiare qualcosa?
+        <br><br>
+        LOCALS ti porta subito dentro la vita del luogo. Scopri cosa fare,
+        dove andare e vivi la destinazione come chi la conosce davvero.
+        <br><br>
+        <strong>Live like a local</strong>
       </p>
 
-      <a href="#esperienze" class="story-link">Inizia a scoprire →</a>
+      <a href="#categorie" class="story-link">Inizia a scoprire →</a>
 
     </div>
 
     <div class="story-images">
 
-      <img src="informazioni passanti.png" alt="Viaggiatori che chiedono informazioni a persone del posto">
+      <img
+        src="informazioni passanti.png"
+        alt="Viaggiatori che chiedono informazioni a persone del posto"
+      >
 
-<img src="conviviale.png" alt="Esperienza conviviale locale">
+      <img
+        src="conviviale.png"
+        alt="Esperienza conviviale locale"
+      >
 
     </div>
 
@@ -1119,9 +1090,10 @@
 
       <div>
         <div class="footer-brand">LOCALS</div>
-        <p>Live like a local.</p>
+        <p>Live like a local</p>
+
         <p style="margin-top:12px;max-width:290px;">
-          Scopri i luoghi attraverso le persone che li vivono.
+          Vivi come gli abitanti del posto, ovunque tu sia.
         </p>
       </div>
 
@@ -1155,6 +1127,53 @@
   </div>
 
 </footer>
+
+
+<script>
+  const questionInput = document.getElementById("localsQuestion");
+
+  const questions = [
+    "Ti vuoi allenare?",
+    "Trekking?",
+    "Hai bisogno di una navetta?",
+    "Partita a padel?",
+    "Andiamo a mangiare?",
+    "Beach volley?",
+    "Home Restaurant?",
+    "Usciamo in barca?",
+    "Cosa facciamo stasera?"
+  ];
+
+  let questionIndex = 0;
+  let rotationActive = true;
+
+  function rotateQuestion() {
+    if (!rotationActive || document.activeElement === questionInput) return;
+
+    questionInput.style.opacity = "0";
+
+    setTimeout(() => {
+      questionIndex = (questionIndex + 1) % questions.length;
+      questionInput.placeholder = questions[questionIndex];
+      questionInput.style.opacity = "1";
+    }, 220);
+  }
+
+  questionInput.style.transition = "opacity .22s ease";
+
+  setInterval(rotateQuestion, 2600);
+
+  questionInput.addEventListener("focus", () => {
+    rotationActive = false;
+    questionInput.style.opacity = "1";
+  });
+
+  questionInput.addEventListener("blur", () => {
+    if (questionInput.value.trim() === "") {
+      rotationActive = true;
+    }
+  });
+</script>
 
 </body>
 </html>
