@@ -421,7 +421,7 @@
 
     /* DESTINAZIONI */
 .destinations {
-  padding: 75px 0;
+  padding: 35px 0;
   background: #fff;
 }
 
@@ -495,10 +495,19 @@
 
 .destinations-note {
   margin-top: 24px;
-  max-width: 700px;
   color: var(--muted);
   font-size: 15px;
   line-height: 1.7;
+  white-space: nowrap;
+}
+
+.destinations-note strong {
+  display: block;
+  color: var(--yellow);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 2px;
+}
 }
 
 @media (max-width: 900px) {
@@ -1037,9 +1046,8 @@
   <div class="container">
 
     <div class="destinations-head">
-      <div class="destinations-kicker">Local Secrets</div>
-      <h2>Scopri dove vivere come un local.</h2>
-    </div>
+  <h2>Scopri dove vivere come un local.</h2>
+</div>
 
     <div class="destinations-grid">
 
@@ -1071,9 +1079,9 @@
     </div>
 
     <div class="destinations-note">
-      <strong>LOCALS cresce.</strong><br>
-      Le nostre destinazioni sono in continuo aggiornamento. Nuovi luoghi, nuovi Local, nuovi modi di viverli.
-    </div>
+  <strong>LOCALS CRESCE.</strong>
+  <span>Le nostre destinazioni sono in continuo aggiornamento. Nuovi luoghi, nuovi Local, nuovi modi di viverli.</span>
+</div>
 
   </div>
 </section>
