@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mare & Barche | LOCALS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --yellow: #F4B400;
+      --cream: #F0EDE6;
+      --white: #ffffff;
+      --muted: #667085;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--navy);
+      background: #fff;
+    }
+
+    /* HEADER */
+
+    header {
+      background: white;
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid rgba(15,23,42,.06);
+    }
+
+    .navbar {
+      width: min(1200px, 92%);
+      margin: auto;
+      height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      width: 210px;
+      height: auto;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    /* HERO */
+
+    .sea-hero {
+      min-height: 560px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(15,23,42,.76) 0%,
+          rgba(15,23,42,.48) 45%,
+          rgba(15,23,42,.10) 100%
+        ),
+        url("mare-barche-hero.png") center center / cover no-repeat;
+    }
+
+    .sea-hero-inner {
+      width: min(1200px, 92%);
+      margin: auto;
+      color: white;
+    }
+
+    .sea-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 5.5vw, 76px);
+      line-height: 1.03;
+      max-width: 700px;
+      margin-bottom: 18px;
+    }
+
+    .sea-hero p {
+      font-size: 19px;
+      line-height: 1.6;
+      max-width: 590px;
+      color: rgba(255,255,255,.9);
+    }
+
+    /* SEARCH */
+
+    .sea-search {
+      width: min(1200px, 92%);
+      margin: -52px auto 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    .search-box {
+      max-width: 760px;
+      background: white;
+      padding: 22px 25px;
+      border-radius: 18px;
+      box-shadow: 0 14px 45px rgba(15,23,42,.16);
+    }
+
+    .search-label {
+      display: block;
+      color: var(--yellow);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      margin-bottom: 10px;
+    }
+
+    .search-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .fake-search {
+      flex: 1;
+      height: 55px;
+      border: 1px solid #dedede;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      padding: 0 17px;
+      font-size: 16px;
+      color: #667085;
+    }
+
+    .search-button {
+      height: 55px;
+      padding: 0 25px;
+      border: 0;
+      border-radius: 11px;
+      background: var(--navy);
+      color: white;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* CONTENT */
+
+    .content {
+      width: min(1200px, 92%);
+      margin: auto;
+      padding: 100px 0 90px;
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 4vw, 54px);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 650px;
+      line-height: 1.65;
+      margin-bottom: 42px;
+    }
+
+    /* DEMO CARDS */
+
+    .experiences {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .experience-card {
+      border-radius: 17px;
+      overflow: hidden;
+      border: 1px solid #e8e8e8;
+      background: white;
+    }
+
+    .experience-image {
+      height: 230px;
+      background: #e8edf0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #89919c;
+      font-size: 14px;
+    }
+
+    .experience-info {
+      padding: 20px;
+    }
+
+    .experience-location {
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .experience-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .experience-info p {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .demo {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: var(--cream);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .6px;
+    }
+
+    /* EMPTY / GROWING */
+
+    .growing {
+      margin-top: 55px;
+      padding: 30px 0;
+      border-top: 1px solid #e6e6e6;
+    }
+
+    .growing strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 16px;
+      letter-spacing: 1.2px;
+      margin-bottom: 6px;
+    }
+
+    .growing p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 45px 0;
+    }
+
+    .footer-inner {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+    }
+
+    footer p {
+      color: rgba(255,255,255,.62);
+      line-height: 1.7;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .brand-logo {
+        width: 165px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .sea-hero {
+        min-height: 510px;
+      }
+
+      .sea-search {
+        margin-top: -35px;
+      }
+
+      .search-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-button {
+        width: 100%;
+      }
+
+      .experiences {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        padding-top: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar">
+
+      <a href="index.html">
+        <img src="logo-locals1.png" alt="LOCALS - Live like a local" class="brand-logo">
+      </a>
+
+      <nav>
+        <a href="index.html#categorie">Esplora</a>
+        <a href="index.html#destinazioni">Destinazioni</a>
+        <a href="index.html#come-funziona">Come funziona</a>
+        <a href="index.html#local">Diventa un Local</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <section class="sea-hero">
+    <div class="sea-hero-inner">
+
+      <h1>Mare? Vediamo che si può fare.</h1>
+
+      <p>
+        Barche, SUP, spiagge, giornate in mare e tutto quello
+        che vale la pena vivere lungo la costa.
+      </p>
+
+    </div>
+  </section>
+
+
+  <div class="sea-search">
+
+    <div class="search-box">
+
+      <span class="search-label">ESPLORA IL MARE</span>
+
+      <div class="search-row">
+
+        <div class="fake-search">
+          <span id="seaTyping"></span>
+        </div>
+
+        <button class="search-button">
+          Scopri
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <main class="content">
+
+    <div class="eyebrow">MARE & BARCHE</div>
+
+    <h2>Vivi il mare come chi è del posto.</h2>
+
+    <p class="intro">
+      Scopri esperienze, attività e persone che vivono il mare ogni giorno.
+      LOCALS sta costruendo la sua selezione insieme ai Local del territorio.
+    </p>
+
+
+    <div class="experiences">
+
+      <article class="experience-card">
+
+        <div class="experience-image">
+          Foto esperienza
+        </div>
+
+        <div class="experience-info">
+
+          <div class="experience-location">Gallipoli e dintorni</div>
+
+          <h3>Giornata in barca</h3>
+
+          <p>
+            Una giornata sul mare, tra soste per il bagno,
+            calette e costa salentina.
+          </p>
+
+          <span class="demo">IN ARRIVO</span>
+
+        </div>
+
+      </article>
+
+
+      <article class="experience-card">
+
+        <div class="experience-image">
+          Foto esperienza
+        </div>
+
+        <div class="experience-info">
+
+          <div class="experience-location">Salento</div>
+
+          <h3>Giro in SUP</h3>
+
+          <p>
+            Esplora la costa dall'acqua e scopri angoli
+            che da terra non vedresti.
+          </p>
+
+          <span class="demo">IN ARRIVO</span>
+
+        </div>
+
+      </article>
+
+
+      <article class="experience-card">
+
+        <div class="experience-image">
+          Foto esperienza
+        </div>
+
+        <div class="experience-info">
+
+          <div class="experience-location">Salento</div>
+
+          <h3>Boat Party</h3>
+
+          <p>
+            Musica, mare e nuove persone.
+            Un modo diverso di vivere una giornata in barca.
+          </p>
+
+          <span class="demo">IN ARRIVO</span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <div class="growing">
+
+      <strong>LOCALS CRESCE.</strong>
+
+      <p>
+        Nuove esperienze vengono aggiunte man mano che incontriamo i Local del territorio.
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">LOCALS</div>
+
+      <p>Live like a local.</p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    const seaQuestions = [
+      "Escursione in barca?",
+      "Giro in SUP?",
+      "Boat party?",
+      "Giornata in barca?",
+      "Relax in spiaggia?"
+    ];
+
+    const typingElement = document.getElementById("seaTyping");
+
+    let questionIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeSeaQuestion() {
+
+      const current = seaQuestions[questionIndex];
+
+      if (!deleting) {
+
+        typingElement.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(typeSeaQuestion, 1600);
+          return;
+        }
+
+      } else {
+
+        typingElement.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          deleting = false;
+          questionIndex = (questionIndex + 1) % seaQuestions.length;
+        }
+
+      }
+
+      setTimeout(typeSeaQuestion, deleting ? 35 : 70);
+    }
+
+    typeSeaQuestion();
+  </script>
+
+</body>
+</html>
