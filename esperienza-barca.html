@@ -497,7 +497,7 @@
 
 </div>
 
-<button class="cta">
+<button class="cta" id="booking-button" disabled>
   Paga ora
 </button>
 
@@ -600,12 +600,18 @@
   const guestSelect = document.querySelector('.booking-guests');
   const totalElement = document.getElementById('booking-total');
   const pricePerPerson = 70;
-
+  const dateInput = document.querySelector('.booking-date');
+  const bookingButton = document.getElementById('booking-button');
+function updateBookingButton() {
+  bookingButton.disabled = !(dateInput.value && guestSelect.value);
+}
   guestSelect.addEventListener('change', function () {
     const guests = Number(this.value);
     const total = guests * pricePerPerson;
     totalElement.textContent = '€ ' + total;
   });
+  guestSelect.addEventListener('change', updateBookingButton);
+ dateInput.addEventListener('change', updateBookingButton);
 </script>
   
 </body>
