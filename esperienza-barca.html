@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Giornata in barca | LOCALS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --yellow: #F4B400;
+      --cream: #F0EDE6;
+      --muted: #687080;
+      --line: #e7e7e7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--navy);
+      background: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .navbar {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 88px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      width: 190px;
+      display: block;
+    }
+
+    .back-link {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .back-link:hover {
+      color: #b77d00;
+    }
+
+    /* PAGE */
+
+    .page {
+      max-width: 1180px;
+      margin: auto;
+      padding: 50px 24px 80px;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--navy);
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: 1.45fr .85fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* IMAGE */
+
+    .main-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 22px;
+      display: block;
+    }
+
+    /* INFO */
+
+    .location {
+      color: #b77d00;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 4vw, 58px);
+      font-weight: 500;
+      line-height: 1.02;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .details {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 20px 0;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .detail span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .detail strong {
+      font-size: 15px;
+    }
+
+    .status {
+      display: inline-block;
+      background: var(--cream);
+      border-radius: 50px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin-bottom: 20px;
+    }
+
+    .cta {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      background: var(--navy);
+      color: white;
+      padding: 16px 20px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: default;
+      opacity: .92;
+    }
+
+    .cta-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    /* DESCRIPTION */
+
+    .experience-body {
+      max-width: 760px;
+      margin-top: 70px;
+    }
+
+    .experience-body h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .experience-body p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .includes {
+      margin-top: 35px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .includes h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .includes ul {
+      list-style: none;
+    }
+
+    .includes li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eeeeee;
+      font-size: 15px;
+    }
+
+    .includes li::before {
+      content: "✓";
+      color: #b77d00;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 45px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: rgba(255,255,255,.65);
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .navbar {
+        min-height: 74px;
+      }
+
+      .brand-logo {
+        width: 160px;
+      }
+
+      .page {
+        padding-top: 30px;
+      }
+
+      .top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .main-image {
+        height: 330px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .experience-body {
+        margin-top: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+
+    <a href="index.html">
+      <img class="brand-logo" src="logo-locals1.png" alt="LOCALS">
+    </a>
+
+    <a class="back-link" href="mare-barche.html">
+      ← Mare &amp; Barche
+    </a>
+
+  </div>
+</header>
+
+
+<main class="page">
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    &nbsp;/&nbsp;
+    <a href="mare-barche.html">Mare &amp; Barche</a>
+    &nbsp;/&nbsp;
+    Giornata in barca
+  </div>
+
+
+  <section class="top">
+
+    <div>
+      <img
+        class="main-image"
+        src="giornata in barca.png"
+        alt="Giornata in barca nel Salento">
+    </div>
+
+
+    <div class="experience-summary">
+
+      <div class="location">
+        Gallipoli e dintorni
+      </div>
+
+      <h1>
+        Giornata in barca
+      </h1>
+
+      <p class="intro">
+        Una giornata sul mare, tra soste per il bagno,
+        calette e costa salentina.
+      </p>
+
+      <div class="details">
+
+        <div class="detail">
+          <span>Durata</span>
+          <strong>Da definire</strong>
+        </div>
+
+        <div class="detail">
+          <span>Partenza</span>
+          <strong>Gallipoli</strong>
+        </div>
+
+        <div class="detail">
+          <span>Esperienza</span>
+          <strong>Barca</strong>
+        </div>
+
+        <div class="detail">
+          <span>Prezzo</span>
+          <strong>In arrivo</strong>
+        </div>
+
+      </div>
+
+      <div class="status">
+        IN ARRIVO SU LOCALS
+      </div>
+
+      <button class="cta">
+        Prenotazioni presto disponibili
+      </button>
+
+      <div class="cta-note">
+        Stiamo selezionando i primi Local per questa esperienza.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="experience-body">
+
+    <h2>
+      Vivi il mare come chi è del posto.
+    </h2>
+
+    <p>
+      Non solo un giro in barca. L'idea è vivere una giornata
+      sul mare seguendo i ritmi e i luoghi di chi questa costa
+      la conosce davvero.
+    </p>
+
+    <p>
+      Calette, soste per il bagno e angoli della costa salentina
+      da scoprire direttamente dal mare.
+    </p>
+
+
+    <div class="includes">
+
+      <h3>Cosa potrai trovare</h3>
+
+      <ul>
+        <li>Uscita in barca lungo la costa</li>
+        <li>Soste per il bagno</li>
+        <li>Calette e punti scelti dal Local</li>
+        <li>Esperienza con persone del territorio</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      LOCALS
+    </div>
+
+    <p>
+      Live like a local.
+    </p>
+
+  </div>
+</footer>
+
+</body>
+</html>
