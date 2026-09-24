@@ -492,7 +492,7 @@
 
   <div class="detail">
     <span>Totale</span>
-    <strong>€ --</strong>
+    <strong id="booking-total">€ --</strong>
   </div>
 
 </div>
@@ -596,5 +596,17 @@
   </div>
 </footer>
 
+  <script>
+  const guestSelect = document.querySelector('.booking-guests');
+  const totalElement = document.getElementById('booking-total');
+  const pricePerPerson = 70;
+
+  guestSelect.addEventListener('change', function () {
+    const guests = Number(this.value);
+    const total = guests * pricePerPerson;
+    totalElement.textContent = '€ ' + total;
+  });
+</script>
+  
 </body>
 </html>
