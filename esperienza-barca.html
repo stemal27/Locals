@@ -489,6 +489,58 @@
 .cancellation-link:hover {
   opacity: 0.65;
 }
+
+    /* MEETING POINT */
+
+.meeting-section {
+  margin-top: 42px;
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+}
+
+.meeting-section h2 {
+  margin-bottom: 22px;
+}
+
+.meeting-location {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.meeting-pin {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+.meeting-location strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+.meeting-location p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  color: var(--muted);
+}
+
+.meeting-info {
+  max-width: 590px;
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: var(--muted);
+}
     
     /* FOOTER */
 
@@ -513,6 +565,21 @@
       color: rgba(255,255,255,.65);
       font-size: 13px;
     }
+
+    .footer-links {
+  margin-top: 14px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,.75);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-links a:hover {
+  color: white;
+}
 
     /* MOBILE */
 
@@ -841,6 +908,27 @@
 </div>
   </section>
 
+  <section class="meeting-section">
+
+  <div class="section-label">DOVE CI INCONTRIAMO</div>
+
+  <h2>Il punto di partenza</h2>
+
+  <div class="meeting-location">
+    <div class="meeting-pin">⌖</div>
+
+    <div>
+      <strong>Gallipoli, LE</strong>
+      <p>La partenza è da Gallipoli.</p>
+    </div>
+  </div>
+
+  <p class="meeting-info">
+    Nella mail di conferma della prenotazione riceverai tutte le indicazioni necessarie per raggiungere il punto d'incontro.
+  </p>
+
+</section>
+
 </main>
 
 
@@ -855,6 +943,14 @@
       Live like a local.
     </p>
 
+    <p class="footer-links">
+  <a href="termini-cancellazione.html"
+     target="_blank"
+     rel="noopener noreferrer">
+    Termini di cancellazione
+  </a>
+</p>
+    
   </div>
 </footer>
 
