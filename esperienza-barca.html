@@ -418,7 +418,7 @@
 
 .local-card {
   display: grid;
-  grid-template-columns: 92px 1fr;
+  grid-template-columns: 108px 1fr;
   gap: 24px;
   align-items: start;
   padding: 24px;
@@ -428,8 +428,8 @@
 }
 
 .local-photo {
-  width: 88px;
-  height: 88px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
   background: var(--navy);
   color: white;
@@ -472,8 +472,22 @@
 .local-quote {
   font-size: 15px !important;
   line-height: 1.6 !important;
-  margin: 0 !important;
+  font-style: italic;
+  margin: 16px 0 0 !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
   max-width: 470px;
+}
+
+    .cancellation-link {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cancellation-link:hover {
+  opacity: 0.65;
 }
     
     /* FOOTER */
@@ -816,9 +830,13 @@
   <h3>Cancellazione</h3>
 
   <p>
-    Le condizioni di cancellazione saranno indicate dal Local
-    prima della prenotazione.
-  </p>
+  Consulta
+  <a href="termini-cancellazione.html"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="cancellation-link">qui</a>
+  i termini di cancellazione.
+</p>
 
 </div>
   </section>
