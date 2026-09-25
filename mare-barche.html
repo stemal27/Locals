@@ -316,30 +316,67 @@
       line-height: 1.6;
     }
 
-    /* FOOTER */
+   /* FOOTER */
 
-    footer {
-      background: var(--navy);
-      color: white;
-      padding: 45px 0;
-    }
+footer {
+  background: var(--navy);
+  color: white;
+  padding: 48px 24px 28px;
+}
 
-    .footer-inner {
-      width: min(1200px, 92%);
-      margin: auto;
-    }
+footer .container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
 
-    .footer-brand {
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 7px;
-    }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 42px;
+}
 
-    footer p {
-      color: rgba(255,255,255,.62);
-      line-height: 1.7;
-    }
+.footer-brand {
+  margin: 0 0 12px 0;
+}
+
+.footer-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+footer p {
+  color: rgba(255,255,255,.62);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+footer h4 {
+  color: white;
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+footer a {
+  color: rgba(255,255,255,.62);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 22px;
+  color: rgba(255,255,255,.45);
+  font-size: 12px;
+}
 
     /* MOBILE */
 
@@ -376,6 +413,19 @@
       .content {
         padding-top: 80px;
       }
+      .footer-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.footer-logo {
+  width: 135px;
+}
+
+footer {
+  padding: 42px 24px 26px;
+}
+      
     }
   </style>
 </head>
@@ -516,18 +566,54 @@
   </main>
 
 
-  <footer>
+ <footer>
 
-    <div class="footer-inner">
+  <div class="container">
 
-      <div class="footer-brand">LOCALS</div>
+    <div class="footer-grid">
 
-      <p>Live like a local.</p>
+      <div>
+        <div class="footer-brand">
+          <img src="logo-locals-footer.png"
+               alt="LOCALS - Live like a local"
+               class="footer-logo">
+        </div>
+
+        <p style="margin-top:12px;max-width:290px;">
+          Tutto quello che ti serve per vivere un luogo, proprio come chi lo abita.
+        </p>
+      </div>
+
+      <div>
+        <h4>Scopri LOCALS</h4>
+        <p><a href="#">Esperienze</a></p>
+        <p><a href="index.html#destinazioni">Destinazioni</a></p>
+      </div>
+
+      <div>
+        <h4>LOCALS</h4>
+        <p><a href="#">Come funziona</a></p>
+        <p><a href="#">Diventa un Local</a></p>
+      </div>
+
+      <div>
+        <h4>Informazioni</h4>
+        <p><a href="#">Chi siamo</a></p>
+        <p><a href="#">Contatti</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">Termini e condizioni</a></p>
+        <p><a href="termini-cancellazione.html">Termini di cancellazione</a></p>
+      </div>
 
     </div>
 
-  </footer>
+    <div class="copyright">
+      © 2026 LOCALS. Live like a local.
+    </div>
 
+  </div>
+
+</footer>
 
   <script>
     const seaQuestions = [
