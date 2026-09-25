@@ -66,87 +66,186 @@
       opacity: .65;
     }
 
-    /* PAGE */
+   /* PAGE */
 
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 70px 24px 100px;
-    }
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 72px 24px 110px;
+}
 
-    .eyebrow {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
+.page-header {
+  max-width: 780px;
+  margin-bottom: 64px;
+}
 
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 6vw, 64px);
-      font-weight: 500;
-      line-height: 1.05;
-      margin-bottom: 22px;
-    }
+.eyebrow {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
 
-    .intro {
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.75;
-      margin-bottom: 55px;
-    }
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(46px, 6vw, 68px);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
 
-    .terms-section {
-      padding: 36px 0;
-      border-top: 1px solid var(--line);
-    }
+.intro {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
 
-    .terms-section h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
+.terms-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 720px);
+  gap: 72px;
+  align-items: start;
+}
 
-    .terms-section p {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.8;
-      margin-bottom: 14px;
-    }
+.terms-nav {
+  position: sticky;
+  top: 32px;
+  padding-top: 4px;
+}
 
-    .terms-section p:last-child {
-      margin-bottom: 0;
-    }
+.terms-nav-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
 
-    .weather-box {
-      margin-top: 20px;
-      max-width: 720px;
-      padding: 24px;
-      background: #faf9f6;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-    }
+.terms-nav a {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 8px 0;
+  transition: .2s ease;
+}
 
-    .weather-box strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
+.terms-nav a:hover {
+  color: var(--navy);
+}
 
-    .weather-box p {
-      margin: 0;
-    }
+.terms-content {
+  min-width: 0;
+}
 
-    .last-update {
-      margin-top: 40px;
-      color: var(--muted);
-      font-size: 12px;
-    }
+.terms-section {
+  position: relative;
+  padding: 0 0 42px;
+  margin-bottom: 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-number {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+}
+
+.terms-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.terms-section p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.terms-section p:last-child {
+  margin-bottom: 0;
+}
+
+.weather-box {
+  margin-top: 22px;
+  padding: 26px 28px;
+  background: #faf9f6;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.weather-box strong {
+  display: block;
+  color: var(--navy);
+  font-size: 15px;
+  margin-bottom: 9px;
+}
+
+.weather-box p {
+  margin: 0;
+}
+
+.last-update {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .page {
+    padding: 50px 24px 75px;
+  }
+
+  .page-header {
+    margin-bottom: 45px;
+  }
+
+  h1 {
+    font-size: 43px;
+    letter-spacing: -0.8px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .terms-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .terms-nav {
+    display: none;
+  }
+
+  .terms-section {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+  }
+
+  .terms-section h2 {
+    font-size: 27px;
+  }
+
+  .weather-box {
+    padding: 22px;
+  }
+}
 
     /* FOOTER */
 
@@ -274,103 +373,138 @@
 
 <main class="page">
 
-  <div class="eyebrow">
-    PRENOTAZIONI LOCALS
-  </div>
+  <header class="page-header">
+    <div class="eyebrow">PRENOTAZIONI LOCALS</div>
 
-  <h1>
-    Termini di cancellazione
-  </h1>
+    <h1>Termini di cancellazione</h1>
 
-  <p class="intro">
-    Qui trovi le informazioni relative alla cancellazione delle
-    esperienze prenotate tramite LOCALS e alle situazioni in cui
-    un'esperienza non può essere svolta.
-  </p>
-
-
-  <section class="terms-section">
-
-    <h2>Cancellazione da parte del cliente</h2>
-
-    <p>
-      Le condizioni applicabili alla cancellazione volontaria di una
-      prenotazione saranno indicate chiaramente durante il processo di
-      prenotazione e prima del pagamento.
+    <p class="intro">
+      Qui trovi le informazioni relative alla cancellazione delle esperienze
+      prenotate tramite LOCALS e alle situazioni in cui un'esperienza
+      non può essere svolta.
     </p>
-
-    <p>
-      Eventuali rimborsi dipenderanno dalle condizioni applicabili
-      all'esperienza prenotata.
-    </p>
-
-  </section>
+  </header>
 
 
-  <section class="terms-section">
+  <div class="terms-layout">
 
-    <h2>Maltempo e condizioni del mare</h2>
+    <!-- INDICE -->
 
-    <div class="weather-box">
+    <aside class="terms-nav">
 
-      <strong>La sicurezza viene prima di tutto.</strong>
+      <div class="terms-nav-title">
+        In questa pagina
+      </div>
 
-      <p>
-        Se le condizioni del mare non permettono di svolgere
-        l'esperienza, verrai avvisato e riceverai il rimborso oppure,
-        se preferisci, potrai scegliere una nuova data disponibile.
-      </p>
+      <a href="#cliente">Cancellazione del cliente</a>
+      <a href="#maltempo">Maltempo</a>
+      <a href="#local">Cancellazione del Local</a>
+      <a href="#rimborsi">Rimborsi</a>
+      <a href="#ritardi">Ritardi e no-show</a>
+
+    </aside>
+
+
+    <!-- CONTENUTO -->
+
+    <div class="terms-content">
+
+
+      <section class="terms-section" id="cliente">
+
+        <span class="section-number">01</span>
+
+        <h2>Cancellazione da parte del cliente</h2>
+
+        <p>
+          Le condizioni applicabili alla cancellazione volontaria di una
+          prenotazione saranno indicate chiaramente durante il processo
+          di prenotazione e prima del pagamento.
+        </p>
+
+        <p>
+          Eventuali rimborsi dipenderanno dalle condizioni applicabili
+          all'esperienza prenotata.
+        </p>
+
+      </section>
+
+
+      <section class="terms-section" id="maltempo">
+
+        <span class="section-number">02</span>
+
+        <h2>Maltempo e condizioni del mare</h2>
+
+        <div class="weather-box">
+
+          <strong>La sicurezza viene prima di tutto.</strong>
+
+          <p>
+            Se le condizioni del mare non permettono di svolgere
+            l'esperienza, verrai avvisato e riceverai il rimborso oppure,
+            se preferisci, potrai scegliere una nuova data disponibile.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <section class="terms-section" id="local">
+
+        <span class="section-number">03</span>
+
+        <h2>Cancellazione da parte del Local</h2>
+
+        <p>
+          Se il Local non può svolgere l'esperienza prenotata, il cliente
+          verrà informato e potrà ricevere il rimborso oppure scegliere,
+          quando disponibile, una nuova data.
+        </p>
+
+      </section>
+
+
+      <section class="terms-section" id="rimborsi">
+
+        <span class="section-number">04</span>
+
+        <h2>Rimborsi</h2>
+
+        <p>
+          Quando è previsto un rimborso, questo viene effettuato utilizzando
+          il metodo di pagamento associato alla prenotazione, secondo i tempi
+          tecnici necessari per l'elaborazione del pagamento.
+        </p>
+
+      </section>
+
+
+      <section class="terms-section" id="ritardi">
+
+        <span class="section-number">05</span>
+
+        <h2>Ritardi e mancata presentazione</h2>
+
+        <p>
+          Le condizioni relative a ritardi o mancata presentazione saranno
+          indicate nelle informazioni dell'esperienza o nella conferma
+          della prenotazione, quando applicabili.
+        </p>
+
+      </section>
+
+
+      <div class="last-update">
+        Ultimo aggiornamento: settembre 2026
+      </div>
 
     </div>
 
-  </section>
-
-
-  <section class="terms-section">
-
-    <h2>Cancellazione da parte del Local</h2>
-
-    <p>
-      Se il Local non può svolgere l'esperienza prenotata, il cliente
-      verrà informato e potrà ricevere il rimborso oppure scegliere,
-      quando disponibile, una nuova data.
-    </p>
-
-  </section>
-
-
-  <section class="terms-section">
-
-    <h2>Rimborsi</h2>
-
-    <p>
-      Quando è previsto un rimborso, questo viene effettuato utilizzando
-      il metodo di pagamento associato alla prenotazione, secondo i tempi
-      tecnici necessari per l'elaborazione del pagamento.
-    </p>
-
-  </section>
-
-
-  <section class="terms-section">
-
-    <h2>Ritardi e mancata presentazione</h2>
-
-    <p>
-      Le condizioni relative a ritardi e mancata presentazione saranno
-      indicate nelle informazioni dell'esperienza e nella conferma della
-      prenotazione, quando applicabili.
-    </p>
-
-  </section>
-
-
-  <p class="last-update">
-    Ultimo aggiornamento: settembre 2026
-  </p>
+  </div>
 
 </main>
-
 
 <footer>
 
