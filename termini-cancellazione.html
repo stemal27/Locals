@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Termini di cancellazione | LOCALS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --cream: #F0EDE6;
+      --muted: #687080;
+      --line: #e7e7e7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--navy);
+      background: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .navbar {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 88px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      width: 190px;
+      display: block;
+    }
+
+    .back-link {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .back-link:hover {
+      opacity: .65;
+    }
+
+    /* PAGE */
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 70px 24px 100px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 64px);
+      font-weight: 500;
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 55px;
+    }
+
+    .terms-section {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .terms-section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .terms-section p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .terms-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .weather-box {
+      margin-top: 20px;
+      max-width: 720px;
+      padding: 24px;
+      background: #faf9f6;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .weather-box strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .weather-box p {
+      margin: 0;
+    }
+
+    .last-update {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 48px 24px 28px;
+    }
+
+    footer .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 42px;
+    }
+
+    .footer-brand {
+      margin: 0 0 12px 0;
+    }
+
+    .footer-logo {
+      width: 150px;
+      height: auto;
+      display: block;
+      margin: 0;
+    }
+
+    footer p {
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer h4 {
+      color: white;
+      margin: 0 0 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    footer a {
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 22px;
+      color: rgba(255,255,255,.45);
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .navbar {
+        min-height: 74px;
+      }
+
+      .brand-logo {
+        width: 160px;
+      }
+
+      .page {
+        padding: 50px 24px 70px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .footer-logo {
+        width: 135px;
+      }
+
+      footer {
+        padding: 42px 24px 26px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+
+    <a href="index.html">
+      <img class="brand-logo"
+           src="logo-locals1.png"
+           alt="LOCALS">
+    </a>
+
+    <a class="back-link" href="index.html">
+      ← Torna a LOCALS
+    </a>
+
+  </div>
+</header>
+
+
+<main class="page">
+
+  <div class="eyebrow">
+    PRENOTAZIONI LOCALS
+  </div>
+
+  <h1>
+    Termini di cancellazione
+  </h1>
+
+  <p class="intro">
+    Qui trovi le informazioni relative alla cancellazione delle
+    esperienze prenotate tramite LOCALS e alle situazioni in cui
+    un'esperienza non può essere svolta.
+  </p>
+
+
+  <section class="terms-section">
+
+    <h2>Cancellazione da parte del cliente</h2>
+
+    <p>
+      Le condizioni applicabili alla cancellazione volontaria di una
+      prenotazione saranno indicate chiaramente durante il processo di
+      prenotazione e prima del pagamento.
+    </p>
+
+    <p>
+      Eventuali rimborsi dipenderanno dalle condizioni applicabili
+      all'esperienza prenotata.
+    </p>
+
+  </section>
+
+
+  <section class="terms-section">
+
+    <h2>Maltempo e condizioni del mare</h2>
+
+    <div class="weather-box">
+
+      <strong>La sicurezza viene prima di tutto.</strong>
+
+      <p>
+        Se le condizioni del mare non permettono di svolgere
+        l'esperienza, verrai avvisato e riceverai il rimborso oppure,
+        se preferisci, potrai scegliere una nuova data disponibile.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="terms-section">
+
+    <h2>Cancellazione da parte del Local</h2>
+
+    <p>
+      Se il Local non può svolgere l'esperienza prenotata, il cliente
+      verrà informato e potrà ricevere il rimborso oppure scegliere,
+      quando disponibile, una nuova data.
+    </p>
+
+  </section>
+
+
+  <section class="terms-section">
+
+    <h2>Rimborsi</h2>
+
+    <p>
+      Quando è previsto un rimborso, questo viene effettuato utilizzando
+      il metodo di pagamento associato alla prenotazione, secondo i tempi
+      tecnici necessari per l'elaborazione del pagamento.
+    </p>
+
+  </section>
+
+
+  <section class="terms-section">
+
+    <h2>Ritardi e mancata presentazione</h2>
+
+    <p>
+      Le condizioni relative a ritardi e mancata presentazione saranno
+      indicate nelle informazioni dell'esperienza e nella conferma della
+      prenotazione, quando applicabili.
+    </p>
+
+  </section>
+
+
+  <p class="last-update">
+    Ultimo aggiornamento: settembre 2026
+  </p>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <div class="footer-brand">
+          <img src="logo-locals-footer.png"
+               alt="LOCALS - Live like a local"
+               class="footer-logo">
+        </div>
+
+        <p style="margin-top:12px;max-width:290px;">
+          Tutto quello che ti serve per vivere un luogo, proprio come chi lo abita.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Scopri LOCALS</h4>
+
+        <p><a href="#">Esperienze</a></p>
+        <p><a href="index.html#destinazioni">Destinazioni</a></p>
+
+      </div>
+
+
+      <div>
+
+        <h4>LOCALS</h4>
+
+        <p><a href="#">Come funziona</a></p>
+        <p><a href="#">Diventa un Local</a></p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Informazioni</h4>
+
+        <p><a href="#">Chi siamo</a></p>
+        <p><a href="#">Contatti</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">Termini e condizioni</a></p>
+        <p><a href="termini-cancellazione.html">Termini di cancellazione</a></p>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 LOCALS. Live like a local.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
