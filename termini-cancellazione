@@ -178,7 +178,7 @@ h1 {
   margin-bottom: 0;
 }
 
-.weather-box {
+.terms-box {
   margin-top: 22px;
   padding: 26px 28px;
   background: #faf9f6;
@@ -186,15 +186,19 @@ h1 {
   border-radius: 16px;
 }
 
-.weather-box strong {
+.terms-box strong {
   display: block;
   color: var(--navy);
   font-size: 15px;
   margin-bottom: 9px;
 }
 
-.weather-box p {
-  margin: 0;
+.terms-box p {
+  margin-bottom: 14px;
+}
+
+.terms-box p:last-child {
+  margin-bottom: 0;
 }
 
 .last-update {
@@ -416,16 +420,16 @@ h1 {
 
         <h2>Cancellazione da parte del cliente</h2>
 
-        <p>
-          Le condizioni applicabili alla cancellazione volontaria di una
-          prenotazione saranno indicate chiaramente durante il processo
-          di prenotazione e prima del pagamento.
-        </p>
+        <div class="terms-box">
+  <p>
+    Le condizioni applicabili alla cancellazione volontaria di una prenotazione
+    saranno indicate chiaramente durante il processo di prenotazione e prima del pagamento.
+  </p>
 
-        <p>
-          Eventuali rimborsi dipenderanno dalle condizioni applicabili
-          all'esperienza prenotata.
-        </p>
+  <p>
+    Eventuali rimborsi dipenderanno dalle condizioni applicabili all'esperienza prenotata.
+  </p>
+</div>
 
       </section>
 
@@ -436,7 +440,7 @@ h1 {
 
         <h2>Maltempo e condizioni del mare</h2>
 
-        <div class="weather-box">
+       <div class="terms-box">
 
           <strong>La sicurezza viene prima di tutto.</strong>
 
@@ -456,12 +460,14 @@ h1 {
         <span class="section-number">03</span>
 
         <h2>Cancellazione da parte del Local</h2>
-
+        <div class="terms-box">
+          
         <p>
           Se il Local non può svolgere l'esperienza prenotata, il cliente
           verrà informato e potrà ricevere il rimborso oppure scegliere,
           quando disponibile, una nuova data.
         </p>
+        </div>
 
       </section>
 
@@ -471,12 +477,14 @@ h1 {
         <span class="section-number">04</span>
 
         <h2>Rimborsi</h2>
+        <div class="terms-box">
 
         <p>
           Quando è previsto un rimborso, questo viene effettuato utilizzando
           il metodo di pagamento associato alla prenotazione, secondo i tempi
           tecnici necessari per l'elaborazione del pagamento.
         </p>
+        </div>
 
       </section>
 
@@ -487,13 +495,21 @@ h1 {
 
         <h2>Ritardi e mancata presentazione</h2>
 
-        <p>
-          Le condizioni relative a ritardi o mancata presentazione saranno
-          indicate nelle informazioni dell'esperienza o nella conferma
-          della prenotazione, quando applicabili.
-        </p>
+<div class="terms-box">
+  <strong>Arriva puntuale per goderti tutta l'esperienza.</strong>
 
-      </section>
+  <p>
+    In caso di ritardo del cliente, l'esperienza manterrà l'orario di conclusione
+    originariamente previsto e la durata effettiva potrà quindi essere ridotta.
+  </p>
+
+  <p>
+    In caso di mancata presentazione, senza preventiva cancellazione secondo
+    le condizioni applicabili alla prenotazione, non è previsto alcun rimborso.
+  </p>
+</div>
+
+</section>
 
 
       <div class="last-update">
