@@ -333,6 +333,73 @@
       margin-right: 10px;
     }
 
+    /* DAY AT SEA */
+
+.day-at-sea {
+  margin-top: 55px;
+  padding-top: 42px;
+  border-top: 1px solid var(--line);
+}
+
+.section-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  margin-bottom: 12px;
+}
+
+.day-at-sea h2 {
+  margin-bottom: 14px;
+}
+
+.day-intro {
+  max-width: 650px;
+  margin-bottom: 30px !important;
+}
+
+.day-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.day-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.day-number {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+
+.day-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.day-card p {
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.day-note {
+  margin-top: 24px;
+  font-size: 13px !important;
+  font-style: italic;
+}
     /* FOOTER */
 
     footer {
@@ -389,6 +456,14 @@
       .experience-body {
         margin-top: 50px;
       }
+      .day-grid {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.day-card img {
+  aspect-ratio: 4 / 3;
+}
     }
   </style>
 </head>
@@ -538,18 +613,66 @@
     </p>
 
 
-    <div class="includes">
+    <section class="day-at-sea">
 
-  <h3>Cosa farai</h3>
+  <div class="section-label">LA TUA GIORNATA IN MARE</div>
 
-  <ul>
-    <li>Partenza da Gallipoli</li>
-    <li>Navigazione lungo la costa</li>
-    <li>Soste per il bagno</li>
-    <li>Scoperta di calette e punti scelti dal Local</li>
-  </ul>
+  <h2>Non il solito giro in barca.</h2>
 
-</div>
+  <p class="day-intro">
+    Parti con un local, scopri calette raggiungibili solo dal mare
+    e prenditi il tempo di fermarti dove ne vale davvero la pena.
+  </p>
+
+  <div class="day-grid">
+
+    <article class="day-card">
+      <img src="esperienza-barca-partenza.png"
+           alt="Partenza per l'esperienza in barca">
+
+      <div class="day-number">01</div>
+      <h3>Si parte</h3>
+
+      <p>
+        Lasciamo il porto e seguiamo la costa alla ricerca
+        degli angoli più belli.
+      </p>
+    </article>
+
+    <article class="day-card">
+      <img src="esperienza-barca-bagno.png"
+           alt="Sosta per il bagno durante l'esperienza in barca">
+
+      <div class="day-number">02</div>
+      <h3>Tuffati dove vuoi</h3>
+
+      <p>
+        Calette, acqua cristallina e soste bagno lontano
+        dai punti più affollati.
+      </p>
+    </article>
+
+    <article class="day-card">
+      <img src="esperienza-barca-relax.png"
+           alt="Momento di relax durante l'esperienza in barca">
+
+      <div class="day-number">03</div>
+      <h3>Goditi il momento</h3>
+
+      <p>
+        Qualcosa da bere, il mare e il Salento davanti.
+        Senza fretta.
+      </p>
+    </article>
+
+  </div>
+
+  <p class="day-note">
+    L'itinerario può variare in base alle condizioni del mare
+    e della giornata.
+  </p>
+
+</section>
 
 <div class="includes">
 
