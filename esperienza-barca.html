@@ -400,6 +400,82 @@
   font-size: 13px !important;
   font-style: italic;
 }
+
+    /* LOCAL PROFILE */
+
+.local-section {
+  margin-top: 38px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.local-section > h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+.local-card {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 24px;
+  background: #faf9f6;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.local-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.local-photo span {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+}
+
+.local-info h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 3px;
+}
+
+.local-location {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.local-languages {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.local-verified {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 15px;
+}
+
+.local-quote {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  max-width: 470px;
+}
+    
     /* FOOTER */
 
     footer {
@@ -464,6 +540,21 @@
 .day-card img {
   aspect-ratio: 4 / 3;
 }
+
+      .local-card {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.local-photo {
+  width: 76px;
+  height: 76px;
+}
+
+.local-photo span {
+  font-size: 30px;
+}
+      
     }
   </style>
 </head>
@@ -685,16 +776,41 @@
   </ul>
 
 </div>
-<div class="includes">
+<section class="local-section">
 
   <h3>Il tuo Local</h3>
 
-  <p>
-    Conoscerai qui la persona che ti accompagnerà durante l'esperienza.
-    Nome, foto e una breve presentazione del Local.
-  </p>
+  <div class="local-card">
 
-</div>
+    <div class="local-photo">
+      <span>A</span>
+    </div>
+
+    <div class="local-info">
+
+      <h4>Andrea</h4>
+
+      <div class="local-location">
+        Local di Gallipoli
+      </div>
+
+      <div class="local-languages">
+        🇮🇹 Italiano &nbsp;·&nbsp; 🇬🇧 English
+      </div>
+
+      <div class="local-verified">
+        ✓ Identità verificata
+      </div>
+
+      <p class="local-quote">
+        “Sono cresciuto a Gallipoli. Ti porto nei posti dove andrei con i miei amici.”
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
     <div class="includes">
 
   <h3>Cancellazione</h3>
