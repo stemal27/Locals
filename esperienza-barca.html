@@ -787,15 +787,15 @@ footer {
 </select>
   </div>
 
-  <div class="detail">
-    <span>Totale</span>
-    <strong id="booking-total">€ --</strong>
-  </div>
+  <div class="detail booking-total-row">
+  <span id="booking-calculation">€70 × partecipanti</span>
+  <strong id="booking-total">Totale € --</strong>
+</div>
 
 </div>
 
 <button class="cta" id="booking-button" disabled>
-  Paga ora
+  Continua
 </button>
 
 <div class="cta-note payment-methods">
@@ -1025,27 +1025,47 @@ footer {
   <script>
   const guestSelect = document.querySelector('.booking-guests');
   const totalElement = document.getElementById('booking-total');
+  const calculationElement = document.getElementById('booking-calculation');
   const pricePerPerson = 70;
   const dateInput = document.querySelector('.booking-date');
   const bookingButton = document.getElementById('booking-button');
     
-  const today = new Date();
-  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+ const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+
+const localTomorrow = new Date(
+  tomorrow.getTime() - tomorrow.getTimezoneOffset() * 60000
+)
   .toISOString()
   .split('T')[0];
 
-dateInput.min = localToday;
+dateInput.min = localTomorrow;
     
 function updateBookingButton() {
   bookingButton.disabled = !(dateInput.value && guestSelect.value);
 }
-  guestSelect.addEventListener('change', function () {
-    const guests = Number(this.value);
-    const total = guests * pricePerPerson;
-    totalElement.textContent = '€ ' + total;
-  });
+ guestSelect.addEventListener('change', function () {
+  const guests = Number(this.value);
+  const total = guests * pricePerPerson;
+
+  calculationElement.textContent =
+    '€70 × ' + guests + (guests === 1 ? ' partecipante' : ' partecipanti');
+
+  totalElement.textContent = 'Totale €' + total;
+});
   guestSelect.addEventListener('change', updateBookingButton);
  dateInput.addEventListener('change', updateBookingButton);
+    
+    bookingButton.addEventListener('click', function () {
+  const date = dateInput.value;
+  const guests = guestSelect.value;
+
+  window.location.href =
+    'checkout.html?experience=giornata-barca&date=' +
+    encodeURIComponent(date) +
+    '&guests=' +
+    encodeURIComponent(guests);
+});
 </script>
   
 </body>
