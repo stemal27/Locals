@@ -317,21 +317,28 @@
     }
 
     .includes ul {
-      list-style: none;
-    }
+  list-style: none;
+}
 
-    .includes li {
-      padding: 10px 0;
-      border-bottom: 1px solid #eeeeee;
-      font-size: 15px;
-    }
+.includes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  row-gap: 0;
+  max-width: 650px;
+}
 
+   .includes li {
+  padding: 11px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
     .includes li::before {
-      content: "✓";
-      color: #b77d00;
-      font-weight: 700;
-      margin-right: 10px;
-    }
+  content: "✓";
+  color: var(--navy);
+  font-weight: 700;
+  margin-right: 10px;
+}
 
     /* DAY AT SEA */
 
@@ -886,13 +893,12 @@ footer {
 
   <h3>Cosa è incluso</h3>
 
-  <ul>
-    <li>Barca</li>
-    <li>Skipper</li>
-    <li>Aperitivo a bordo</li>
-    <li>Carburante</li>
-  </ul>
-
+  <ul class="includes-grid">
+  <li>Barca</li>
+  <li>Skipper</li>
+  <li>Aperitivo a bordo</li>
+  <li>Carburante</li>
+</ul>
 </div>
 <section class="local-section">
 
