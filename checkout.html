@@ -281,6 +281,10 @@
       cursor: pointer;
     }
 
+    .checkout-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
     .checkout-button:hover {
       opacity: .92;
     }
@@ -526,7 +530,7 @@
       <button
         type="submit"
         form="customer-form"
-        class="checkout-button">
+       class="checkout-button" disabled>
         Procedi al pagamento
       </button>
 
@@ -593,6 +597,16 @@
       'Checkout pronto. Il pagamento verrà collegato nella fase successiva.'
     );
   });
+  const termsCheckbox = document.querySelector('.terms-check input');
+const checkoutButton = document.querySelector('.checkout-button');
+
+function updateCheckoutButton() {
+  checkoutButton.disabled = !termsCheckbox.checked;
+}
+
+termsCheckbox.addEventListener('change', updateCheckoutButton);
+updateCheckoutButton();
+  
 </script>
 
 </body>
