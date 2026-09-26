@@ -265,6 +265,42 @@
       margin-top: 11px;
     }
 
+    .payment-methods {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.payment-methods span {
+  margin-right: 4px;
+}
+
+.payment-methods strong {
+  height: 28px;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-methods img {
+  display: block;
+  max-width: 50px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+}
+
+.payment-methods img[alt="Apple Pay"] {
+  max-width: 56px;
+}
+
+.payment-methods img[alt="PayPal"] {
+  max-width: 60px;
+}
+    è
     /* MOBILE */
 
     @media (max-width: 800px) {
@@ -455,9 +491,13 @@
         Procedi al pagamento
       </button>
 
-      <p class="checkout-note">
-        Verifica i dati prima di continuare.
-      </p>
+     <div class="checkout-note payment-methods">
+  <span>Pagamento sicuro</span>
+  <strong><img src="apple-pay.svg" alt="Apple Pay"></strong>
+  <strong><img src="paypal.svg" alt="PayPal"></strong>
+  <strong><img src="visa.svg" alt="Visa"></strong>
+  <strong><img src="mastercard.svg" alt="Mastercard"></strong>
+</div>
 
     </aside>
 
