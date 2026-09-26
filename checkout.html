@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Completa la prenotazione | LOCALS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --cream: #F0EDE6;
+      --muted: #687080;
+      --line: #e7e7e7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--navy);
+      background: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .navbar {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 88px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      width: 190px;
+      display: block;
+    }
+
+    .back-link {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .back-link:hover {
+      opacity: .65;
+    }
+
+    /* PAGE */
+
+    .page {
+      max-width: 1080px;
+      margin: auto;
+      padding: 58px 24px 90px;
+    }
+
+    .page-heading {
+      max-width: 620px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 4vw, 52px);
+      font-weight: 500;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .page-heading p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1fr 390px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* FORM */
+
+    .checkout-form h2,
+    .summary-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      font-weight: 500;
+    }
+
+    .checkout-form h2 {
+      margin-bottom: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .field input {
+      width: 100%;
+      height: 50px;
+      border: 1px solid #dcdcdc;
+      border-radius: 10px;
+      padding: 0 14px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--navy);
+      outline: none;
+      background: #fff;
+    }
+
+    .field input:focus {
+      border-color: var(--navy);
+    }
+
+    .privacy-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    /* SUMMARY */
+
+    .summary-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      position: sticky;
+      top: 24px;
+    }
+
+    .summary-card h2 {
+      margin-bottom: 20px;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 16px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .experience img {
+      width: 92px;
+      height: 92px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .experience-location {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .experience h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .summary-details {
+      padding: 10px 0;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 0;
+      font-size: 14px;
+    }
+
+    .summary-row span:first-child {
+      color: var(--muted);
+    }
+
+    .price-breakdown {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .total-row {
+      border-top: 1px solid var(--line);
+      margin-top: 8px;
+      padding-top: 18px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .checkout-button {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      background: var(--navy);
+      color: #fff;
+      padding: 16px 20px;
+      margin-top: 20px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .checkout-button:hover {
+      opacity: .92;
+    }
+
+    .checkout-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 11px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .navbar {
+        min-height: 74px;
+      }
+
+      .brand-logo {
+        width: 160px;
+      }
+
+      .page {
+        padding-top: 36px;
+      }
+
+      .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .summary-card {
+        position: static;
+        order: -1;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+
+    <a href="index.html">
+      <img class="brand-logo" src="logo-locals1.png" alt="LOCALS">
+    </a>
+
+    <a class="back-link" href="esperienza-barca.html">
+      ← Torna all'esperienza
+    </a>
+
+  </div>
+</header>
+
+
+<main class="page">
+
+  <div class="page-heading">
+    <div class="eyebrow">PRENOTAZIONE</div>
+
+    <h1>Completa la prenotazione</h1>
+
+    <p>
+      Inserisci i tuoi dati e controlla il riepilogo prima di procedere al pagamento.
+    </p>
+  </div>
+
+
+  <div class="checkout-grid">
+
+    <section class="checkout-form">
+
+      <h2>I tuoi dati</h2>
+
+      <form id="customer-form">
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="first-name">Nome</label>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              autocomplete="given-name"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="last-name">Cognome</label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              autocomplete="family-name"
+              required>
+          </div>
+
+          <div class="field full">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required>
+          </div>
+
+          <div class="field full">
+            <label for="phone">Telefono</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              required>
+          </div>
+
+        </div>
+
+        <p class="privacy-note">
+          Useremo questi dati esclusivamente per gestire la prenotazione
+          e le comunicazioni relative all'esperienza.
+        </p>
+
+      </form>
+
+    </section>
+
+
+    <aside class="summary-card">
+
+      <h2>La tua prenotazione</h2>
+
+      <div class="experience">
+
+        <img
+          src="giornata in barca.png"
+          alt="Giornata in barca nel Salento">
+
+        <div>
+          <div class="experience-location">
+            Gallipoli e dintorni
+          </div>
+
+          <h3>Giornata in barca</h3>
+        </div>
+
+      </div>
+
+
+      <div class="summary-details">
+
+        <div class="summary-row">
+          <span>Data</span>
+          <strong id="summary-date">--</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Partecipanti</span>
+          <strong id="summary-guests">--</strong>
+        </div>
+
+      </div>
+
+
+      <div class="price-breakdown">
+
+        <div class="summary-row">
+          <span id="price-calculation">€70 × --</span>
+          <strong id="subtotal">€ --</strong>
+        </div>
+
+        <div class="summary-row total-row">
+          <span>Totale</span>
+          <strong id="total">€ --</strong>
+        </div>
+
+      </div>
+
+
+      <button
+        type="submit"
+        form="customer-form"
+        class="checkout-button">
+        Procedi al pagamento
+      </button>
+
+      <p class="checkout-note">
+        Verifica i dati prima di continuare.
+      </p>
+
+    </aside>
+
+  </div>
+
+</main>
+
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  const date = params.get('date');
+  const guests = Number(params.get('guests'));
+
+  const pricePerPerson = 70;
+
+  const summaryDate = document.getElementById('summary-date');
+  const summaryGuests = document.getElementById('summary-guests');
+  const priceCalculation = document.getElementById('price-calculation');
+  const subtotal = document.getElementById('subtotal');
+  const total = document.getElementById('total');
+  const customerForm = document.getElementById('customer-form');
+
+  if (!date || !guests || guests < 1 || guests > 8) {
+    window.location.href = 'esperienza-barca.html';
+  } else {
+    const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString(
+      'it-IT',
+      {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }
+    );
+
+    const bookingTotal = guests * pricePerPerson;
+
+    summaryDate.textContent = formattedDate;
+
+    summaryGuests.textContent =
+      guests + (guests === 1 ? ' partecipante' : ' partecipanti');
+
+    priceCalculation.textContent =
+      '€70 × ' + guests;
+
+    subtotal.textContent = '€' + bookingTotal;
+    total.textContent = '€' + bookingTotal;
+  }
+
+  customerForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    alert(
+      'Checkout pronto. Il pagamento verrà collegato nella fase successiva.'
+    );
+  });
+</script>
+
+</body>
+</html>
