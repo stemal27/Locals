@@ -64,7 +64,7 @@
     }
 
     .back-link:hover {
-      color: #b77d00;
+    opacity: 0.65;
     }
 
     /* PAGE */
@@ -105,7 +105,7 @@
     /* INFO */
 
     .location {
-      color: #b77d00;
+      color: var(--muted);
       font-size: 13px;
       font-weight: 700;
       letter-spacing: .8px;
@@ -755,9 +755,9 @@ footer {
         </div>
 
         <div class="detail">
-          <span>Prezzo</span>
-          <strong>In arrivo</strong>
-        </div>
+  <span>Prezzo</span>
+  <strong>€70 a persona</strong>
+</div>
 
       </div>
 
@@ -1028,6 +1028,14 @@ footer {
   const pricePerPerson = 70;
   const dateInput = document.querySelector('.booking-date');
   const bookingButton = document.getElementById('booking-button');
+    
+  const today = new Date();
+  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+  .toISOString()
+  .split('T')[0];
+
+dateInput.min = localToday;
+    
 function updateBookingButton() {
   bookingButton.disabled = !(dateInput.value && guestSelect.value);
 }
