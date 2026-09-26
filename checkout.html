@@ -239,6 +239,34 @@
       font-weight: 700;
     }
 
+    .terms-check {
+  margin-top: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.terms-check label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.terms-check input {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.terms-link {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+    
     .checkout-button {
       width: 100%;
       border: 0;
@@ -445,7 +473,7 @@
 
         <div>
           <div class="experience-location">
-            Gallipoli e dintorni
+           Partenza da Gallipoli
           </div>
 
           <h3>Giornata in barca</h3>
@@ -483,7 +511,18 @@
 
       </div>
 
-
+      <div class="terms-check">
+  <label>
+    <input type="checkbox" required form="customer-form">
+    <span>
+      Accetto i <a href="#" class="terms-link">Termini e condizioni</a>
+      e i <a href="termini-cancellazione.html"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="terms-link">termini di cancellazione</a>.
+    </span>
+  </label>
+</div>
       <button
         type="submit"
         form="customer-form"
