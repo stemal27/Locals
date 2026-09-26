@@ -332,6 +332,27 @@
 .payment-methods img[alt="PayPal"] {
   max-width: 60px;
 }
+
+    .checkout-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 28px 20px 32px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.checkout-footer a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.checkout-footer a:hover {
+  color: var(--navy);
+}
     è
     /* MOBILE */
 
@@ -551,6 +572,19 @@
 
 </main>
 
+  <div class="checkout-footer">
+  <span>© 2026 LOCALS</span>
+  <span>·</span>
+  <a href="termini-condizioni.html" target="_blank" rel="noopener noreferrer">
+    Termini e condizioni
+  </a>
+  <span>·</span>
+  <a href="termini-cancellazione.html" target="_blank" rel="noopener noreferrer">
+    Termini di cancellazione
+  </a>
+  <span>·</span>
+  <a href="#">Privacy</a>
+</div>
 
 <script>
   const params = new URLSearchParams(window.location.search);
